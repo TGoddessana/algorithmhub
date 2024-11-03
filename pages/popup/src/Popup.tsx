@@ -13,9 +13,8 @@ const notificationOptions = {
 const Popup = () => {
   const theme = useStorage(exampleThemeStorage);
   const isLight = theme === 'light';
-  const logo = isLight ? 'popup/logo_vertical.svg' : 'popup/logo_vertical_dark.svg';
-  const goGithubSite = () =>
-    chrome.tabs.create({ url: 'https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite' });
+  const logo = isLight ? 'popup/icon-dark.png' : 'popup/icon-white.png';
+  const goGithubSite = () => chrome.tabs.create({ url: 'https://github.com/TGoddessana/algorithmhub' });
 
   const injectContentScript = async () => {
     const [tab] = await chrome.tabs.query({ currentWindow: true, active: true });
@@ -30,7 +29,6 @@ const Popup = () => {
         files: ['/content-runtime/index.iife.js'],
       })
       .catch(err => {
-        // Handling errors related to other paths
         if (err.message.includes('Cannot access a chrome:// URL')) {
           chrome.notifications.create('inject-error', notificationOptions);
         }
