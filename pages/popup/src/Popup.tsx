@@ -141,7 +141,7 @@ const ExtensionOnOffSwitch = () => {
 };
 
 const FooterIcons = () => {
-  const goGithubSite = () => chrome.tabs.create({ url: 'https://githu b.com/TGoddessana/algorithmhub' });
+  const goGithubSite = () => chrome.tabs.create({ url: 'https://github.com/TGoddessana/algorithmhub' });
   const sendEmail = () => (window.location.href = 'mailto:twicegoddessana1229@gmail.com');
   const openWelcomePage = () => chrome.tabs.create({ url: chrome.runtime.getURL('welcome.html') });
 
