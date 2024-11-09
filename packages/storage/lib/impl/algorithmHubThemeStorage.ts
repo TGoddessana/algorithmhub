@@ -8,13 +8,12 @@ type ThemeStorage = BaseStorage<Theme> & {
   toggle: () => Promise<void>;
 };
 
-const storage = createStorage<Theme>('theme-storage-key', 'light', {
+const storage = createStorage<Theme>('algorithmHubTheme', 'light', {
   storageEnum: StorageEnum.Local,
   liveUpdate: true,
 });
 
-// You can extend it with your own methods
-export const exampleThemeStorage: ThemeStorage = {
+export const algorithmHubThemeStorage: ThemeStorage = {
   ...storage,
   toggle: async () => {
     await storage.set(currentTheme => {
