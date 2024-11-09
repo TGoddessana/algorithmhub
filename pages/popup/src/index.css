@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.App-logo {
-  height: 60vmin;
-  margin-bottom: 1rem;
-}
 
 body {
   width: 300px;

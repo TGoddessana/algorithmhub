@@ -33,9 +33,6 @@ const manifest = deepmerge(
       default_popup: 'popup/index.html',
       default_icon: 'icon-dark.png',
     },
-    chrome_url_overrides: {
-      newtab: 'new-tab/index.html',
-    },
     icons: {
       128: 'icon-dark.png',
     },
@@ -50,7 +47,7 @@ const manifest = deepmerge(
       },
       {
         matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-        css: ['content.css'], // public folder
+        css: ['content.css'],
       },
     ],
     devtools_page: 'devtools/index.html',
