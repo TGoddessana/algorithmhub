@@ -6,10 +6,10 @@ import { useEffect, useState } from 'react';
 import type { ComponentPropsWithoutRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
-import { algorithmHubThemeStorage } from '@extension/storage';
+import { exampleThemeStorage } from '@extension/storage';
 
 const Popup = () => {
-  const theme = useStorage(algorithmHubThemeStorage);
+  const theme = useStorage(exampleThemeStorage);
   const isLight = theme === 'light';
   const logo = isLight ? 'popup/icon-dark.png' : 'popup/icon-white.png';
   const goGithubSite = () => chrome.tabs.create({ url: 'https://github.com/TGoddessana/algorithmhub' });
@@ -58,7 +58,7 @@ const PSPlatforms = () => {
   const openBaekJoon = () => chrome.tabs.create({ url: 'https://www.acmicpc.net' });
   const openProgrammers = () => chrome.tabs.create({ url: 'https://programmers.co.kr' });
 
-  const theme = useStorage(algorithmHubThemeStorage);
+  const theme = useStorage(exampleThemeStorage);
   const isLight = theme === 'light';
 
   const buttonClass = `flex items-center justify-center text-xl rounded px-4 py-2 font-bold shadow hover:scale-105 ${
@@ -85,7 +85,7 @@ const PSPlatforms = () => {
 
 const AuthenticateGithubButton = (props: ComponentPropsWithoutRef<'button'>) => {
   const authenticate = () => chrome.runtime.sendMessage({ type: 'authenticate' });
-  const theme = useStorage(algorithmHubThemeStorage);
+  const theme = useStorage(exampleThemeStorage);
   const isLight = theme === 'light';
 
   return (
@@ -145,7 +145,7 @@ const FooterIcons = () => {
   const sendEmail = () => (window.location.href = 'mailto:twicegoddessana1229@gmail.com');
   const openWelcomePage = () => chrome.tabs.create({ url: chrome.runtime.getURL('welcome.html') });
 
-  const theme = useStorage(algorithmHubThemeStorage);
+  const theme = useStorage(exampleThemeStorage);
   const isLight = theme === 'light';
 
   const buttonClass = `flex items-center h-10 justify-center rounded px-4 py-2 font-bold shadow hover:scale-105 ${
@@ -168,13 +168,13 @@ const FooterIcons = () => {
 };
 
 const DarkmodeSwitch = (props: ComponentPropsWithoutRef<'button'>) => {
-  const theme = useStorage(algorithmHubThemeStorage);
+  const theme = useStorage(exampleThemeStorage);
   const isLight = theme === 'light';
 
   return (
     <button
       className={`right-4 flex h-10 items-center justify-center rounded px-4 py-1 font-bold shadow hover:scale-105 ${isLight ? 'bg-gray-200 text-black' : 'bg-gray-700 text-white'}`}
-      onClick={algorithmHubThemeStorage.toggle}>
+      onClick={exampleThemeStorage.toggle}>
       <FontAwesomeIcon icon={isLight ? faMoon : faSun} className="text-2xl" />
       {props.children}
     </button>

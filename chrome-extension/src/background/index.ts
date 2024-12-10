@@ -1,7 +1,7 @@
 import 'webextension-polyfill';
-import { algorithmHubThemeStorage } from '@extension/storage';
+import { exampleThemeStorage } from '@extension/storage';
 
-algorithmHubThemeStorage.get().then(theme => {
+exampleThemeStorage.get().then(theme => {
   console.log('theme', theme);
 });
 

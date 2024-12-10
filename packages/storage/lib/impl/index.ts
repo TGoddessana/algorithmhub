@@ -1,1 +1,1 @@
-export * from './algorithmHubThemeStorage';
+export * from './exampleThemeStorage';
