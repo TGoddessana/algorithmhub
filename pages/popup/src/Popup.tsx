@@ -1,5 +1,4 @@
 import '@src/Popup.css';
-import '@src/legacy/popup.css';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faSun, faMoon, faHome, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
